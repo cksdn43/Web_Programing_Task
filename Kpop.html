@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LCW</title>
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%;}
+        #menubar {
+            background: black;
+            height: 55px;
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 0;
+            width: 567px;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 15px 40px;
+        }
+
+        #menubar ul li a {
+            color: white;
+            font-size: large;
+            text-decoration: none;
+        }
+        @keyframes lol1{
+            from {transform: rotate(0deg);}
+            to {transform: rotate(-360deg);}
+        }
+        @keyframes lol2{
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+        img.a {
+            animation-name: lol1;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+        }
+        img.b {
+            animation-name: lol2;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+        }
+        #kpop:hover{
+            position:relative;
+            right: 30px;
+            bottom: 20px;
+        }
+    </style>
+    <script>
+        let p;
+        let timerID = null;
+        let files = ["load('https://ibighit.com/bts/kor/')",
+        "load('https://www.ygfamily.com/artist/main.asp?LANGDIV=K&ATYPE=2&ARTIDX=70')",
+        "load('https://newjeans.kr/main')",
+        "load('http://ive-official.com/')",
+        "load('https://itzy.jype.com/')",
+        "load('https://namu.wiki/w/%EC%8B%B8%EC%9D%B4')",
+        "load('https://straykids.jype.com/')",
+        "load('https://www.smtown.com/artist/musician/10766')"]
+        function init(){
+            p = document.getElementById("p");
+            p.onmouseover = function(){
+                this.style.backgroundColor = "yellow";
+            };
+            p.addEventListener("mouseout",
+            function(){
+                this.style.backgroundColor = "white";
+            });
+            q = document.getElementById("q");
+            q.onmouseover = function () {
+                this.style.backgroundColor = "yellow";
+            };
+            q.addEventListener("mouseout",
+                function () {
+                    this.style.backgroundColor = "white";
+                });
+        }
+        function startTimer(imgs, key){
+            let a;
+            let time =3000;
+            if(key == 'bts'){
+                a = files[0];
+            }
+            else if (key == 'blk') {
+                a = files[1];
+            }
+            else if (key == 'njs') {
+                a = files[2];
+            }
+            else if (key == 'ive') {
+                a = files[3];
+            }
+            else if (key == 'itz') {
+                a = files[4];
+            }
+            else if (key == 'psy') {
+                a = files[5];
+            }
+            else if (key == 'stk') {
+                a = files[6];
+            }
+            else if (key == 'apa') {
+                a = files[7];
+            }
+            
+            timerID = setTimeout(a,time);
+            imgs.title = "3초 후 이동합니다.";
+        }
+        function cancelTimer(){
+            if(timerID != null){
+            clearTimeout(timerID);}
+        }
+        function load(url){
+            window.open(url, "myWin");
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div style="width: 1519px;">
+    <nav id="menubar">
+        <ul>
+            <li><a href=".\Korean_Wave.html">한류</a></li>
+            <li><a href=".\Kpop.html">Kpop</a></li>
+            <li><a href=".\Kdrama.html">Kdrama</a></li>
+        </ul>
+    </nav>
+    <img class="a" width="200px" height="200px" src=".\img\spotlight2.jpg" style="float: right;">
+    <img class="b" width="200px" height="200px" src=".\img\spotlight1.jpg" style="float: left;">
+    <label><iframe width="1000" height="500" src="https://www.youtube.com/embed/gdZLi9oWNZg?start=20&autoplay=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen style="margin-left: 10px; margin-top: 10px; display: block; margin: 0 auto;"></iframe><p style="text-align: center; margin:0px"></p><br></label>
+        <hr>
+        <p style="font-size: 30px;font-weight: bold; text-align:center;" id="p">Kpop의 인기 지금 실감해보세요.</p>
+        <img src="https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/official/ko_kr/insights/2022/kpoptwitte-2021-0.gif" style="display: block; margin: 0px auto;">
+        <nav style="margin-left: 600px">
+            <header>2021 K-POP 팬이 가장 많은 국가 TOP10</header>
+            <ol type="1">
+                <li>인도네시아</li><br>
+                <li>일본</li><br>
+                <li>필리핀</li><br>
+                <li>미국</li><br>
+                <li>태국</li><br>
+                <li>브라질</li><br>
+                <li>멕시코</li><br>
+                <li>인도</li><br>
+                <li>말레이시아</li><br>
+                <li>터키</li>
+            </ol>
+        </nav>
+        <br><hr>
+        <p style="font-size: 30px;font-weight: bold; text-align:center;" id="q">인기 Kpop 그룹을 소개합니다!</p>
+        <p style="margin-left:10px;text-align:center;">마우스를 올리면 그룹 홈페이지로 이동합니다.</p>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px" 
+                src=".\img\bts.jpg" alt="bts사진" onmouseover="startTimer(this,'bts')" onmouseout="cancelTimer()" id="kpop"><br>BTS</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\blk.jpg" onmouseover="startTimer(this,'blk')" onmouseout="cancelTimer()" id="kpop"><br>BLACKPINK</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\newjeans.jpg" onmouseover="startTimer(this,'njs')" onmouseout="cancelTimer()" id="kpop"><br>NEWJEANS</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\ive.jpg" onmouseover="startTimer(this,'ive')" onmouseout="cancelTimer()" id="kpop"><br>IVE</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\itzy.jpg" onmouseover="startTimer(this,'itz')" onmouseout="cancelTimer()" id="kpop"><br>ITZY</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\psy.png" onmouseover="startTimer(this, 'psy')" onmouseout="cancelTimer()" id="kpop"><br>PSY</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\strayzids.jpg" onmouseover="startTimer(this, 'stk')" onmouseout="cancelTimer()" id="kpop"><br>STRAYKIDS</label>
+        <label style="float:left; margin: 5px;"><img width="365px" height="350px"
+                src=".\img\aspa.jpg" onmouseover="startTimer(this, 'apa')" onmouseout="cancelTimer()" id="kpop"><br>AESPA</label>
+        <br><hr>
+        </div>
+</body>
+
+</html>

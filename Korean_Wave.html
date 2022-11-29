@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LCW</title>
+    <style>
+        html, body {margin: 0; padding: 0; height: 100%}
+        #menubar {
+            background: black;
+            height: 55px;
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 0;
+            width: 567px;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 15px 40px;
+        }
+
+        #menubar ul li a {
+            color: white;
+            font-size: large;
+            text-decoration: none;
+        }
+        pre.korea {
+            font-size: 15px;
+        }
+        @keyframes bomb {
+            from {font-size: 100%;}
+            to {font-size: 350%;}
+        }
+        span.kra{
+            animation-name: bomb;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            font-size: 56px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function republic(){
+            alert("Republic of Korea")
+        }
+        function bomb(){
+            button = document.getElementById("ps");
+            button.style.position = "relative";
+            button.style.bottom = "-10px";
+            setTimeout(function () {
+                button.style.bottom = "10px";
+            }, 200);
+            var audio = new Audio('./sound/Bomb.mp3');
+            audio.play();
+            setTimeout(function () {
+                document.write('<img src="./img/bomb.gif" width="1519px" height="1000px">');
+            }, 1650);
+            setTimeout(function () {
+                window.open('', '_self').close();
+            }, 4500);
+        }
+    </script>
+</head>
+
+<body>
+    <div style="width: 1519px;">
+    <nav id="menubar">
+        <ul>
+            <li><a href=".\Korean_Wave.html">한류</a></li>
+            <li><a href=".\Kpop.html">Kpop</a></li>
+            <li><a href=".\Kdrama.html">Kdrama</a></li>
+        </ul>
+    </nav>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;<span class="kra" onclick="republic()">대한민국</span>.한류의 고장</p>
+    <hr>
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;소개</h2>
+    <pre class ="korea">
+    대한민국(大韓民國)은 동아시아의 한반도에 위치한 민주공화국이다. 약칭 대한(大韓), 한국(韓國)이다.
+        <details style="margin-left: 30px;">
+            <summary>국기</summary>
+            <img width="300" height="200" src=".\img/Taegeukgi.svg" style="border: 5px solid black;">
+        </details>
+        <details style="margin-left: 30px;">
+            <summary>애국가</summary>
+                <audio autoplay controls>
+                    <source src=".\sound\애국가 제창(1절 합창).mp3" type="audio/mp3">
+                </audio>
+        </details>
+    대한민국의 체제는 자유민주주의를 표방하여 자유주의와 민주주의가 결합된 모습을 드러내며, ‘대통령’ 중심의 다당제 체제로서의 특징이 존재한다.
+    대한민국 임시정부의 법통을 계승하고 자본주의와 자유민주주의를 기반으로 하는 대한민국 정부가 수립되었다.
+        
+    대한민국 제1공화국 시기 북한의 기습남침으로 한국 전쟁을 치렀으며, 이후 한반도는 남북으로 분단되는 계기가 된다.
+    직후 세계 최빈국으로 전락하는 국난을 겪기도 했다. 휴전 이후 냉전체제의 최전방이라는 지정학적 특성을 지닌 한국은 미국의 동맹국으로서 유엔의 지원을 받았다.
+        
+    대한민국 제3공화국 이후 수출과 제조업 집중 육성을 통한 고도 성장을 거듭하여 산업화를 이룩하였다.
+    그 후 경제의 발전으로 민주 의식이 태동된 1987년 6월 항쟁을 통해 군사정권을 무너뜨리고 민주화를 순차적으로 이룩하여 대한민국 제6공화국을 출범시켰다.
+        
+    대한민국은 OECD 출범 이후 원조를 받던 수혜국에서 원조를 주는 공여국으로 바뀐 국가 중 하나이며, 주요 20개국 정상회의인 G20의 회원국이다.
+    한국 영화, 한국 드라마, K-POP, 온라인 게임, 웹툰 등으로 대표되는 대한민국의 소프트 파워는 오늘날에 이르러 세계적인 영향력을 행사하고 있다.
+    경제적으로는 GDP 13위, 수출규모 5위, 수입규모 8위의 경제대국이자 선진국이며, 국방비는 세계 8위, GFP는 세계 6위에 달하는 지역강국이다.
+</pre>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;지도</h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313736.1778521026!2d125.6297671089943!3d35.79820287320005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356455ebcb11ba9b%3A0x91249b00ba88db4b!2z64yA7ZWc66-86rWt!5e0!3m2!1sko!2skr!4v1669451097529!5m2!1sko!2skr"
+        width="600" height="450" style="border-radius:20px; margin-left: 30px;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe><br><br>
+    <details style="margin-left: 30px;">
+        <summary style="color:white">폭사하자</summary>
+        <img src=".\img\pngegg.png" width="100" height="100" id="ps" onclick="bomb()">
+    </details>
+</div>
+</body>
+
+</html>

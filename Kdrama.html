@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LCW</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #menubar {
+            background: black;
+            height: 55px;
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 0;
+            width: 567px;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 15px 40px;
+        }
+
+        #menubar ul li a {
+            color: white;
+            font-size: large;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function wheel(){
+            obj = document.getElementById("span");
+            if (obj.style.color == "red"){
+                obj.style.color = "navy";
+            }
+            else{
+                obj.style.color = "red";
+            }
+        }
+        function drawImage(){
+            let sel = document.getElementById("inp");
+            let img1 = document.getElementById("1");
+            let img2 = document.getElementById("2");
+            let img3 = document.getElementById("3");
+            let img4 = document.getElementById("4");
+            if (sel.value == "1") {
+                img1.src = "./img/r1.jpg";
+                img2.src = "./img/r2.jpg";
+                img3.src = "./img/r3.jfif";
+                img4.src = "./img/r4.jpg";
+            }
+            else if (sel.value == "2") {
+                img1.src = "./img/t1.jpg";
+                img2.src = "./img/t2.jfif";
+                img3.src = "./img/t3.jpg";
+                img4.src = "./img/t4.jpg";
+            }
+            else {
+                img1.src = "./img/h1.jfif";
+                img2.src = "./img/h2.jpg";
+                img3.src = "./img/h3.jfif";
+                img4.src = "./img/h4.jpg";
+            }
+        }
+        function query(key){
+            let str;
+            if(key == "N"){
+                str = "넷플릭스"; 
+            }
+            else if(key == "Wh"){
+                str = "왓챠";
+            }
+            else{
+                str = "웨이브"
+            }
+            let ret = confirm(str + "로 이동하시겠습니까?");
+            return ret;
+        }
+        function createDIV(){
+            let obj = document.getElementById("parent");
+            let newDIV = document.createElement("div");
+            newDIV.innerHTML = prompt("추천할 드라마를 입력하세요.");
+            newDIV.setAttribute("id", "myDiv");
+            newDIV.style.fontWeight = "bold";
+            newDIV.style.marginLeft = "30px";
+            obj.appendChild(newDIV);
+        }
+    </script>
+</head>
+
+<body onmousewheel="wheel()" id ="parent">
+    <div style="width: 1519px;">
+    <nav id="menubar">
+        <ul>
+            <li><a href=".\Korean_Wave.html">한류</a></li>
+            <li><a href=".\Kpop.html">Kpop</a></li>
+            <li><a href=".\Kdrama.html">Kdrama</a></li>
+        </ul>
+    </nav>
+    <p style="font-size: 30px; margin-left:20px;"><span style="font-size: 40px;"><span style="font-size: 1.5em; font-weight: bold;" id="span" >K</span>drama</span>. 드라마의 대세</p>
+    <hr><br>
+    <form style="margin-left:30px;">
+        장르 : <select id="inp" style="width:200px;height:30px; font-size: 15px;" onchange="drawImage()">
+                <option value="1" selected>로맨스</option>
+                <option value="2">스릴러</option>
+                <option value="3">사극</option>
+        </select><br><br>
+        <img id="1" src=".\img\r1.jpg" style="width:337px;height:500px;float: left; margin:15px;">
+        <img id="2" src=".\img\r2.jpg" style="width:337px;height:500px;float: left; margin:15px;">
+        <img id="3" src=".\img\r3.jfif" style="width:337px;height:500px;float: left; margin:15px;">
+        <img id="4" src=".\img\r4.jpg" style="width:337px;height:500px;float: left; margin:15px;">
+        <br>
+        <p style="font-size: 25px;font-weight: bold;margin-left: 25px;"><a href="https://www.netflix.com/"
+                onclick="return query('N')" style="color: red;">넷플릭스</a>, <a href="https://watcha.com/"
+                onclick="return query('Wh')" style="color: rgb(255, 2, 234);">왓챠</a>, <a href="https://www.wavve.com/"
+                onclick="return query('Wa')" style="color: blue;">웨이브</a>에서 바로 확인.</p>
+    </form>
+    
+    <br><hr>
+    <p style="font-size: 25px;font-weight: bold;"><a href="javascript:createDIV()" style="color: black; margin-left: 25px;">이 외에 추천하고 싶은 드라마를 입력!</a></p><p></p><br><br>
+    </div>
+</body>
+
+</html>
