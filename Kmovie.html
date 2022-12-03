@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>LCW</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    #menubar {
+      background: black;
+      height: 55px;
+    }
+
+    #menubar ul {
+      margin: 0;
+      padding: 0;
+      width: 567px;
+    }
+
+    #menubar ul li {
+      display: inline-block;
+      list-style-type: none;
+      padding: 15px 40px;
+    }
+
+    #menubar ul li a {
+      color: white;
+      font-size: large;
+      text-decoration: none;
+    }
+
+    .text_box {
+      font-size: 30px;
+      margin-left: 15px;
+      margin-top: 30px;
+    }
+
+    .blink {
+      animation: blink 0.5s infinite;
+      font-size: 2.5rem;
+    }
+
+    @keyframes blink {
+      to {
+        opacity: 0;
+      }
+    }
+    img{
+      border: 3px solid;
+      box-shadow: 10px 10px 5px black;
+    }
+  </style>
+  <script type="text/javascript">
+    function add() {
+      const content = " 떠오르는 대세. Kmovie";
+      const text = document.querySelector(".text");
+      let i = 0;
+
+      function typing() {
+        if (i >= content.length) {
+          setTimeout(function () {
+            text.textContent = "";
+            i = 0;
+          }, 2000);
+        } else {
+          let txt = content[i++];
+          text.innerHTML += txt === "\n" ? "<br/>" : txt;
+        }
+      }
+      setInterval(typing, 200);
+    }
+    function show(){
+      let text = "보고싶은 영화목록\n";
+      let cnt = 0;
+      const genderNodeList1 = document.getElementsByName('movie1');
+      const genderNodeList2 = document.getElementsByName('movie2');
+      const genderNodeList3 = document.getElementsByName('movie3');
+      const genderNodeList4 = document.getElementsByName('movie4');
+      const genderNodeList5 = document.getElementsByName('movie5');
+      const genderNodeList6 = document.getElementsByName('movie6');
+
+      genderNodeList1.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false; 
+        }
+      })
+      genderNodeList2.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false;
+        }
+      })
+      genderNodeList3.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false;
+        }
+      })
+      genderNodeList4.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false;
+        }
+      })
+      genderNodeList5.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false;
+        }
+      })
+      genderNodeList6.forEach((node) => {
+        if (node.checked) {
+          text += ++cnt + "." + node.value + "\n";
+          node.checked = false;
+        }
+      })
+      alert(text);
+    }
+  </script>
+</head>
+
+<body onload="add()">
+  <div style="width: 1519px">
+    <nav id="menubar">
+      <ul>
+        <!-- location.replace() -->
+        <li><a href=".\Korean_Wave.html">한류</a></li>
+        <li><a href=".\Kpop.html">Kpop</a></li>
+        <li><a href=".\Kdrama.html">Kdrama</a></li>
+        <li><a href=".\Kmovie.html">Kmovie</a></li>
+      </ul>
+    </nav>
+    <div class="text_box">
+      <span class="text"></span><span class="blink">|</span>
+    </div>
+    <br><hr><br>
+    <p style="font-size: 20px; margin: 15px;" id="p">보고싶은 영화를 선택해보세요.</p>
+    <form style="margin-top:30px;">
+      <label style="float: left; margin:30px;">
+        <img src="./img/Parasite.png" width="430px" height="580px"><br><br>
+        <input type="radio" name="movie1" value="기생충">기생충 
+      </label>
+      <label style="float: left; margin:30px;">
+        <img src="./img/Roaring_Currents.jfif" width="430px" height="580px"><br><br>
+        <input type="radio" name="movie2" value="명량">명량
+      </label>
+      <label style="float: left; margin:30px;">
+        <img src="./img/extremejob.jfif" width="430px" height="580px"><br><br>
+        <input type="radio" name="movie3" value="극한직업">극한직업
+      </label><br>
+      <label style="float: left; margin:30px;">
+        <img src="./img/gods.jfif" width="430px" height="580px"><br><br>
+        <input type="radio" name="movie4" value="신과함께-죄와 벌">신과함께-죄와 벌
+      </label>
+      <label style="float: left; margin:30px;">
+        <img src="./img/global.jfif" width="430" height="580"><br><br>
+        <input type="radio" name="movie5" value="국제시장">국제시장
+      </label>
+      <label style="float: left; margin:30px;">
+        <img src="./img/veteran.jfif" width="430px" height="580px"><br><br>
+        <input type="radio" name="movie6" value="베테랑">베테랑
+      </label><br>
+    </form><br>
+    <button onclick='show()' style="margin-left: 700px; width: 100px; height: 50px;">확인</button>
+    <br><br><br>
+  </div>
+</body>
+
+</html>
