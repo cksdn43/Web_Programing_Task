@@ -53,7 +53,7 @@
     </style>
     <script>
       function republic() {
-        alert('Republic of Korea')
+        alert('Republic of Korea');
       }
       function bomb() {
         button = document.getElementById('ps')
@@ -62,18 +62,19 @@
         setTimeout(function () {
           button.style.bottom = '10px'
         }, 200)
-        var audio = new Audio('./sound/Bomb.mp3')
-        audio.play()
+        var audio = new Audio('./sound/Bomb.mp3');
+        audio.play();
         setTimeout(function () {
             document.write(
                 '<img src="./img/unknown.png" id ="art" width="1519" height="730">'
             )
         }, 1700)
         setTimeout(function () {
-          window.open('', '_self').close()
+          window.open('', '_self').close();
+          localStorage.clear();
           let a = window.history.length
           for(let i = 0; i < window.history.length; i++){
-            window.history.back()
+            window.history.back();
           }
         }, 4500)
       }

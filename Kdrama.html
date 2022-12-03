@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LCW</title>
     <style>
         html,
@@ -87,11 +88,13 @@
             let ret = confirm(str + "로 이동하시겠습니까?");
             return ret;
         }
+        let cnt = localStorage.length;
         
         function createDIV(){
             let obj = document.getElementById("parent");
             let newDIV = document.createElement("div");
             newDIV.innerHTML = prompt("추천할 드라마를 입력하세요.");
+            localStorage.setItem(String(cnt++), newDIV.innerHTML);
             newDIV.setAttribute("id", "myDiv");
             newDIV.style.fontWeight = "bold";
             newDIV.style.marginLeft = "30px";
@@ -99,10 +102,23 @@
             obj.appendChild(newDIV);
             obj.appendChild(br);
         }
+        function init(){
+            for(let i = 0; i < cnt; i++){
+                let obj = document.getElementById("parent");
+                let newDIV = document.createElement("div");
+                newDIV.innerHTML = localStorage.getItem(String(i))
+                newDIV.setAttribute("id", "myDiv");
+                newDIV.style.fontWeight = "bold";
+                newDIV.style.marginLeft = "30px";
+                let br = document.createElement("br");
+                obj.appendChild(newDIV);
+                obj.appendChild(br);
+            }
+        }
     </script>
 </head>
 
-<body onmousewheel="wheel()" id ="parent">
+<body onmousewheel="wheel()" id ="parent" onload="init()">
     <div style="width: 1519px;">
     <nav id="menubar">
         <ul>
