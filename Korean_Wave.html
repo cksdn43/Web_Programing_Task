@@ -71,7 +71,10 @@
         }, 1700)
         setTimeout(function () {
           window.open('', '_self').close()
-          window.history.back()
+          let a = window.history.length
+          for(let i = 0; i < window.history.length; i++){
+            window.history.back()
+          }
         }, 4500)
       }
     </script>
