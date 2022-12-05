@@ -45,6 +45,7 @@
       animation: blink 0.5s infinite;
       font-size: 2.5rem;
     }
+
     .text {
       font-weight: bold;
     }
@@ -129,24 +130,23 @@
   </script>
 </head>
 
-<body onload="add()">
+<body onload="add()"> 
   <div style="width: 100%">
     <nav id="menubar">
       <ul>
-        <!-- location.replace() -->
         <li><a href=".\Korean_Wave.html">한류</a></li>
         <li><a href=".\Kpop.html">Kpop</a></li>
         <li><a href=".\Kdrama.html">Kdrama</a></li>
         <li><a href=".\Kmovie.html">Kmovie</a></li>
       </ul>
     </nav>
-    <div class="text_box">
+    <div class="text_box"> <!--자바스크립트 중점적으로 사용-->
       <span class="text"></span><span class="blink">|</span>
     </div>
     <br><hr><br>
     <p style="font-size: 20px; margin: 15px;" id="p">보고싶은 영화를 선택해보세요.</p>
     <form style="margin-top:30px;">
-      <label style="float: left; margin:30px;">
+      <label style="float: left; margin:30px;"> <!--라디오 박스-->
         <img src="./img/Parasite.png" width="430px" height="580px"><br><br>
         <input type="radio" name="movie1" value="기생충">기생충 
       </label>
@@ -170,8 +170,8 @@
         <img src="./img/veteran.jfif" width="430px" height="580px"><br><br>
         <input type="radio" name="movie6" value="베테랑">베테랑
       </label><br>
-    </form><br>
-    <button onclick='show()' style="margin-left: 700px; width: 100px; height: 50px;">확인</button>
+    </form><br><!--예제 9-5 이벤트 리스너에서 이벤트 객체 전달받기 -->
+    <button onclick='show()' style="margin-left: 600px; width: 100px; height: 50px;">확인</button>
     <br><br><br>
   </div>
 </body>

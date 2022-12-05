@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LCW</title>
+    <title>LCW</title> <!-- 2-2 타이틀 달기 -->
     <style>
+        /* 각종 셀렉터 */
         html, body {margin: 0; padding: 0; height: 100%}
-        #menubar {
+        #menubar { 
             background: black;
             height: 55px;
         }
@@ -57,7 +58,7 @@
             var audio = new Audio('./sound/Bomb.mp3');
             audio.play();
             setTimeout(function () {
-                document.write('<img src="./img/bomb.gif" width="100%" height = "100%">');
+                document.write('<img src="./img/bomb.gif" width="1519" height = "735">');
             }, 1650);
             setTimeout(function () {
                 window.open('', '_self').close();
@@ -70,7 +71,7 @@
 
 <body>
     <div style="width: 100%;">
-    <nav id="menubar">
+    <nav id="menubar"> <!-- 예제 5-9 CSS3 스타일을 응용하여 리스트로 메뉴만들기 id 셀렉터 -->
         <ul>
             <li><a href=".\Korean_Wave.html">한류</a></li>
             <li><a href=".\Kpop.html">Kpop</a></li>
@@ -79,20 +80,20 @@
         </ul>
     </nav>
     <br>
-    <p>&nbsp;&nbsp;&nbsp;<span class="kra" onclick="republic()">대한민국</span>.한류의 고장</p>
-    <hr>
-    <h2>&nbsp;&nbsp;&nbsp;&nbsp;소개</h2>
-    <pre class ="korea">
+    <p>&nbsp;&nbsp;&nbsp;<span class="kra" onclick="republic()">대한민국</span>.한류의 고장</p> <!--예제 5-13 애니메이션 예제 9-5 Onclick 이벤트 리스너  -->
+    <hr> <!-- 수평선 긋기 -->
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;소개</h2> <!-- 2-2 문단 제목 -->
+    <pre class ="korea"> <!-- 2 개발자 포맷 그대로 출력하기 4-3 class 셀렉터 -->
     대한민국(大韓民國)은 동아시아의 한반도에 위치한 민주공화국이다. 약칭 대한(大韓), 한국(韓國)이다.
         <details style="margin-left: 30px;">
             <summary>국기</summary>
-            <img width="300" height="200" src=".\img/Taegeukgi.svg" style="border: 5px solid black;">
+            <img width="300" height="200" src=".\img/Taegeukgi.svg" style="border: 5px solid black;"> <!-- 이미지 삽입 -->
         </details>
         <details style="margin-left: 30px;">
-            <summary>애국가</summary>
+            <summary>애국가</summary> <!-- 시맨틱 블록 태그 -->
                 <audio src=".\sound\애국가 제창(1절 합창).mp3" controls>
-                  audio태그 미지원
-                  <!--2-6 오디오 삽입 -->
+                    audio태그 미지원
+                    <!--2-6 오디오 삽입 -->
                 </audio>
         </details>
     대한민국의 체제는 자유민주주의를 표방하여 자유주의와 민주주의가 결합된 모습을 드러내며, ‘대통령’ 중심의 다당제 체제로서의 특징이 존재한다.
@@ -112,7 +113,7 @@
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313736.1778521026!2d125.6297671089943!3d35.79820287320005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356455ebcb11ba9b%3A0x91249b00ba88db4b!2z64yA7ZWc66-86rWt!5e0!3m2!1sko!2skr!4v1669451097529!5m2!1sko!2skr"
         width="600" height="450" style="border-radius:20px; margin-left: 30px;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe><br><br>
+        referrerpolicy="no-referrer-when-downgrade"></iframe><br><br> <!-- 인라인 프레임 -->
     <details style="margin-left: 30px;">
         <summary style="color:white">폭사하자</summary>
         <img src=".\img\pngegg.png" width="100" height="100" id="ps" onclick="bomb()">
